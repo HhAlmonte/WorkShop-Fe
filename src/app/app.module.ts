@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './Core/core.module';
 import { FeatureModule } from './Features/feature.module';
-import { PagesModule } from './Features/pages/pages.module';
 import { UsersModule } from './Features/pages/users/users.module';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { UsersModule } from './Features/pages/users/users.module';
     AppRoutingModule,
     CoreModule,
     FeatureModule,
-    PagesModule,
     UsersModule
   ],
   providers: [],

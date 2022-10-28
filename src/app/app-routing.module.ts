@@ -7,11 +7,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./Features/feature.module').then((m) => m.FeatureModule),
   },
-  {
-    path: '',
-    loadChildren: () =>
-      import('./Features/pages/pages.module').then((m) => m.PagesModule),
-  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
