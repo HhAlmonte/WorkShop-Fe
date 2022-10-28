@@ -9,9 +9,9 @@ import { Menu } from 'src/app/Shared/models/menu.model';
 export class HomeComponent implements OnInit {
   title = 'WorkShop-Fe';
   menus:Menu[] =[
-    {title:'Home', img:'assets/images/Users.png', route:'users'},
-    {title:'Accounts', img:'assets/images/Users.png', route:'accounts'},
-    {title: 'Cards', img: 'assets/images/Card.png' , route: 'cards'}
+    {title:'User', img:'assets/images/usuario.png', route:'user/list'},
+    {title:'Accounts', img:'assets/images/banco.png', route:'accounts'},
+    {title: 'Cards', img: 'assets/images/credit-card.png' , route: 'cards'}
   ]
   constructor() { }
 

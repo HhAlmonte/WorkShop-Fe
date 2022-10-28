@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './Core/core.module';
 import { FeatureModule } from './Features/feature.module';
+import { PagesModule } from './Features/pages/pages.module';
+import { UsersModule } from './Features/pages/users/users.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,10 @@ import { FeatureModule } from './Features/feature.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    FeatureModule,
+    PagesModule,
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
