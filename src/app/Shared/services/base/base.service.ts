@@ -10,11 +10,11 @@ export class ApiService<T extends BaseModel> {
     @Inject('controller') private controller: string
   ) {}
 
-  getUsers() {
+  gets() {
     return this.http.get<T[]>(`http://localhost:3000/${this.controller}`);
   }
 
-  getUser(id: number) {
+  get(id: any) {
     return this.http.get<T>(`http://localhost:3000/users/${id}`);
   }
 

@@ -9,7 +9,7 @@ export interface User extends BaseModel {
   firstName: string;
   idNumber: string;
   lastName: string;
-  phoneNumbers: string;
+  phoneNumber: string;
   status: number
   updatedAt: Date;
 }

@@ -17,7 +17,7 @@ export class UserListComponent implements OnInit {
   }
 
   getUsers() {
-    this.userService.getUsers().subscribe(data =>{
+    this.userService.gets().subscribe(data =>{
       this.user = data;
     }, error => {
       alert(error);
