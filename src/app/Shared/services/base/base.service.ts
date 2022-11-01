@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BaseModel } from '../../models/base.models';
+import { BaseModel } from '../../models/Base/base.models';
 import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',

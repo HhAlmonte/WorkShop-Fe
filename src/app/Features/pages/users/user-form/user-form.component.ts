@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from 'src/app/Shared/models/user.models';
+import { User } from 'src/app/Shared/models/Dtos/user.models';
 import { UserService } from 'src/app/Shared/services/user.service';
 
 @Component({
@@ -10,7 +10,6 @@ import { UserService } from 'src/app/Shared/services/user.service';
 })
 export class UserFormComponent implements OnInit {
   public form : FormGroup = new FormGroup([]);
-  public user!: User;
 
   constructor(private userService: UserService) { }
 
@@ -25,27 +24,20 @@ export class UserFormComponent implements OnInit {
       phoneNumber: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       birthDate: new FormControl('', [Validators.required]),
-      createdAt: new FormControl('', [Validators.required]),
       idNumber: new FormControl('', [Validators.required]),
-      status: new FormControl(1, [Validators.required]),
-      updatedAt: new FormControl('', [Validators.required]),
-      city: new FormControl('', [Validators.required]),
-      street: new FormControl('', [Validators.required]),
-      number: new FormControl('', [Validators.required]),
-      state: new FormControl('', [Validators.required]),
-      zip: new FormControl('', [Validators.required])
+      status: new FormControl(0, [Validators.required]),
+      address: new FormGroup({
+        city: new FormControl('', [Validators.required]),
+        street: new FormControl('', [Validators.required]),
+        number: new FormControl('', [Validators.required]),
+        state: new FormControl('', [Validators.required]),
+        zip: new FormControl('', [Validators.required])
+      })
     });
   }
 
   public createUser(): void{
     const user : User = {
-      address: {
-        city: this.form.get('city')?.value,
-        number: this.form.get('number')?.value,
-        state: this.form.get('state')?.value,
-        street: this.form.get('street')?.value,
-        zip: this.form.get('zip')?.value
-      },
       ...this.form.value
     } as User;
 

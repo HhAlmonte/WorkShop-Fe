@@ -1,5 +1,6 @@
 import { Address } from "./address.models";
-import { BaseModel } from "./base.models";
+import { BaseModel } from "../Base/base.models";
+import { Status } from "../../Enums/status.enum";
 
 export interface User extends BaseModel {
   address: Address;
@@ -9,5 +10,5 @@ export interface User extends BaseModel {
   idNumber: string;
   lastName: string;
   phoneNumber: string;
-  status: number
+  status: Status
 }

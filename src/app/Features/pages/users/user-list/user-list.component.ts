@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/Shared/models/user.models';
+import { Status } from 'src/app/Shared/Enums/status.enum';
+import { User } from 'src/app/Shared/models/Dtos/user.models';
 import { UserService } from 'src/app/Shared/services/user.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { UserService } from 'src/app/Shared/services/user.service';
 export class UserListComponent implements OnInit {
   user:User[] = [];
 
-  constructor(private userService: UserService, private route: Router) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit():void {
     this.getUsers();

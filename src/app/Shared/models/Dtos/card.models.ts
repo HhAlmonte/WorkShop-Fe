@@ -1,4 +1,4 @@
-import { BaseModel } from "./base.models";
+import { BaseModel } from "../Base/base.models";
 
 export interface Card extends BaseModel{
   ammount:number

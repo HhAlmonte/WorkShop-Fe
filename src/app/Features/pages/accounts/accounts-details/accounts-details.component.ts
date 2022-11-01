@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Accounts } from 'src/app/Shared/models/accounts.models';
+import { Accounts } from 'src/app/Shared/models/Dtos/accounts.models';
 import { accountService } from 'src/app/Shared/services/accounts.service';
 
 @Component({

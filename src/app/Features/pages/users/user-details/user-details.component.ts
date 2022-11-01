@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { User } from 'src/app/Shared/models/user.models';
+import { User } from 'src/app/Shared/models/Dtos/user.models';
 import { UserService } from 'src/app/Shared/services/user.service';
 
 @Component({
@@ -22,6 +22,7 @@ export class UserDetailsComponent implements OnInit {
     let userId= this.activeRouter.snapshot.paramMap.get('id');
     this.userService.get(userId).subscribe(data =>{
       this.user = data;
+      console.log(this.user.status.toString());
     }, error => {
       alert(error);
     });
