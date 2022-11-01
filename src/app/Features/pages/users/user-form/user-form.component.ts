@@ -38,7 +38,14 @@ export class UserFormComponent implements OnInit {
   }
 
   public createUser(): void{
-    const user : User ={
+    const user : User = {
+      address: {
+        city: this.form.get('city')?.value,
+        number: this.form.get('number')?.value,
+        state: this.form.get('state')?.value,
+        street: this.form.get('street')?.value,
+        zip: this.form.get('zip')?.value
+      },
       ...this.form.value
     } as User;
 
@@ -54,8 +61,4 @@ export class UserFormComponent implements OnInit {
   private resetForm(): void {
     this.form.reset();
   }
-
-  // public submit(): void {
-  //   console.log(this.form.value);
-  // }
 }
