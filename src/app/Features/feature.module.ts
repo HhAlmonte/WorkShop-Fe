@@ -19,7 +19,8 @@ import { AccountsModule } from './pages/accounts/accounts.module';
     RouterModule,
     UsersModule,
     CardsModule,
-    AccountsModule
+    AccountsModule,
+
   ]
 })
 export class FeatureModule { }

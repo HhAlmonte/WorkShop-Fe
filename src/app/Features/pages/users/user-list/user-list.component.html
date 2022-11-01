@@ -29,7 +29,7 @@
           <td>{{ user.status }}</td>
           <td>
             <i class="fa-solid fa-pen-to-square p-2" style="color: green"> </i>
-            <i class="fa-solid fa-trash" style="color: red"></i>
+            <i (click)="deleteUser(user.id)" class="fa-solid fa-trash" style="color: red; cursor: pointer;"></i>
           </td>
           <td>
             <a routerLink="/user/details/{{ user.id }}">
@@ -41,3 +41,4 @@
     </table>
   </div>
 </div>
+

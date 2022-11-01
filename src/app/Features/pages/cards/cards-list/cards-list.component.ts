@@ -21,4 +21,13 @@ export class CardsListComponent implements OnInit {
       this.cards = cards;
     })
   }
+
+  deleteCard(cardId: number){
+    this.cardService.delete(cardId).subscribe(() =>{
+      this.getCards();
+      alert('Se eliminó la data correctamente');
+    }, ()=>{
+      alert('Error eliminando la data')
+    })
+  }
 }

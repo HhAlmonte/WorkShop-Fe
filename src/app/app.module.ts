@@ -18,7 +18,8 @@ import { UsersModule } from './Features/pages/users/users.module';
     CoreModule,
     FeatureModule,
     UsersModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

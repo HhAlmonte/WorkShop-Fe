@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/Shared/models/user.models';
 import { UserService } from 'src/app/Shared/services/user.service';
 
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/Shared/services/user.service';
 export class UserListComponent implements OnInit {
   user:User[] = [];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private route: Router) { }
 
   ngOnInit():void {
     this.getUsers();
@@ -22,5 +23,14 @@ export class UserListComponent implements OnInit {
     }, error => {
       alert(error);
     });
+  }
+
+  deleteUser(userId:number){
+    this.userService.delete(userId).subscribe(data =>{
+      alert("Se eliminó la data");
+      this.getUsers();
+    }, () =>{
+      alert('Error eliminando la data');
+    })
   }
 }

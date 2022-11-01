@@ -1,1 +1,70 @@
-<p>user-form works!</p>
+<h3 class="text-center">
+  <span class="text-muted" style="color: #dc3545">Usuario:</span>
+  <hr />
+</h3>
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="createUser()">
+    <div class="row">
+      <div class="col">
+        <div class="input_container">
+          <div class="input_div">
+            <label>Ingresa tu nombre</label>
+            <input formControlName="firstName" type="text" placeholder="Nombre" class="form-control" />
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu apellido</label>
+            <input formControlName="lastName" type="text" placeholder="Apellido" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu correo</label>
+            <input formControlName="email" type="email" placeholder="Correo" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu numero telefonico</label>
+            <input formControlName="phoneNumbe" type="number" placeholder="Telefono" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu cedula</label>
+            <input formControlName="idNumber" type="text" placeholder="Cedula" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu fecha de cumpleaños</label>
+            <input formControlName="birthDate" type="date" placeholder="Nacimiento" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu calle</label>
+            <input formControlName="street" type="text" placeholder="Calle" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu numero de casa</label>
+            <input formControlName="number" type="text" placeholder="Numero" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu ciudad</label>
+            <input formControlName="city" type="text" placeholder="Calle" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu municipio</label>
+            <input formControlName="state" type="text" placeholder="Municipio" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label>Ingresa tu codigo postal</label>
+            <input formControlName="zip" type="text" placeholder="Calle" class="form-control"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-danger regular-button mt-3" type="submit">Aceptar</button>
+  </form>
+</div>
