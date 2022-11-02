@@ -6,6 +6,7 @@ import { AccountsListComponent } from './accounts-list/accounts-list.component';
 import { AccountsFormComponent } from './accounts-form/accounts-form.component';
 import { AccountsDetailsComponent } from './accounts-details/accounts-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from 'src/app/Core/core.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AccountsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule
   ]
 })
 export class AccountsModule { }

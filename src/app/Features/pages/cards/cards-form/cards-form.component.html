@@ -14,12 +14,18 @@
 
           <div class="input_div">
             <label class="form-label">Card Type</label>
-            <input formControlName="cardType" type="number" placeholder="Card Type" class="form-control"/>
+            <select formControlName="cardType" class="form-control">
+              <option [disabled]="true" [value]="0">- Selecciona una opción -</option>
+              <option *ngFor="let cardType of cardType" [value]="cardType.key">{{cardType.key}} - {{cardType.value}}</option>
+            </select>
           </div>
 
           <div class="input_div">
             <label class="form-label">Status</label>
-            <input formControlName="status" type="number" placeholder="Status" class="form-control"/>
+            <select formControlName="status" class="form-control">
+              <option [disabled]="true" [value]="0">- Selecciona una opción -</option>
+              <option *ngFor="let cardStatus of cardStatus" [value]="cardStatus.key">{{cardStatus.key}} - {{cardStatus.value}}</option>
+            </select>
           </div>
 
           <div class="input_div">
@@ -34,7 +40,7 @@
 
           <div class="input_div">
             <label class="form-label">User Id</label>
-            <input formControlName="userId" type="number" placeholder="DNI" class="form-control"/>
+            <input formControlName="userId" type="number" placeholder="User Id" class="form-control"/>
           </div>
         </div>
       </div>

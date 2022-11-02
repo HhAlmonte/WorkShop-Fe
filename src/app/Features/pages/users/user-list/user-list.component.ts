@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Status } from 'src/app/Shared/Enums/status.enum';
 import { User } from 'src/app/Shared/models/Dtos/user.models';
 import { UserService } from 'src/app/Shared/services/user.service';
 

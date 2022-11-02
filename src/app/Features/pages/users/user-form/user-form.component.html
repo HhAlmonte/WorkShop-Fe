@@ -3,7 +3,7 @@
 </h3>
 
 <div class="container">
-  <form [formGroup]="form" (ngSubmit)="createUser()">
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="row">
       <div class="col">
         <div class="input_container">
@@ -39,7 +39,10 @@
 
           <div class="input_div">
             <label class="form-label">Status</label>
-            <input formControlName="status" type="number" placeholder="Status" class="form-control"/>
+            <select type="number" formControlName="status" class="form-control">
+              <option [disabled]="true" [value]="0">- Selecciona una opción -</option>
+              <option *ngFor="let userStatus of userStatus" [value]="userStatus.key">{{userStatus.key}} - {{userStatus.value}}</option>
+            </select>
           </div>
         </div>
 
@@ -48,7 +51,7 @@
         <div class="input_container" formGroupName="address">
           <div class="input_div">
             <label class="form-label">Street</label>
-            <input formGroupName="street" type="text" placeholder="Street" class="form-control"/>
+            <input formControlName="street" type="text" placeholder="Street" class="form-control"/>
           </div>
 
           <div class="input_div">

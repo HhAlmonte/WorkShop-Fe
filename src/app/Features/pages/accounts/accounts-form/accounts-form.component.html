@@ -1,5 +1,5 @@
 <h3 class="text-center">
-  <span class="text-muted" style="color: #dc3545">Información Tarjeta</span><hr/>
+  <span class="text-muted" style="color: #dc3545">Información Cuenta</span><hr/>
 </h3>
 
 <div class="container">
@@ -8,23 +8,24 @@
       <div class="col">
         <div class="input_container">
           <div class="input_div">
-            <label class="form-label">Card Number</label>
-            <input formControlName="cardNumber" type="text" placeholder="Card Number" class="form-control" />
+            <label class="form-label">Account Number</label>
+            <input formControlName="accountNumber" type="text" placeholder="Account Number" class="form-control" />
           </div>
 
           <div class="input_div">
-            <label class="form-label">Card Type</label>
-            <input formControlName="cardType" type="number" placeholder="Card Type" class="form-control"/>
+            <label class="form-label">Account Type</label>
+            <select formControlName="accountType" class="form-control">
+              <option [disabled]="true" [value]="0">- Selecciona una opción -</option>
+              <option *ngFor="let accountType of accountType" [value]="accountType.key">{{accountType.key}} - {{accountType.value}}</option>
+            </select>
           </div>
 
           <div class="input_div">
             <label class="form-label">Status</label>
-            <input formControlName="status" type="number" placeholder="Status" class="form-control"/>
-          </div>
-
-          <div class="input_div">
-            <label class="form-label">Ammount</label>
-            <input formControlName="ammount" type="number" placeholder="Ammount" class="form-control"/>
+            <select formControlName="status" class="form-control">
+              <option [disabled]="true" [value]="0">- Selecciona una opción -</option>
+              <option *ngFor="let accountStatus of accountStatus" [value]="accountStatus.key">{{accountStatus.key}} - {{accountStatus.value}}</option>
+            </select>
           </div>
 
           <div class="input_div">
@@ -34,7 +35,7 @@
 
           <div class="input_div">
             <label class="form-label">User Id</label>
-            <input formControlName="userId" type="number" placeholder="DNI" class="form-control"/>
+            <input formControlName="userId" type="number" placeholder="User Id" class="form-control"/>
           </div>
         </div>
       </div>

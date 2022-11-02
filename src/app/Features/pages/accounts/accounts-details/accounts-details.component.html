@@ -18,11 +18,11 @@
         </div>
         <div class="input_div">
           <span>Account Type <i class="fa-solid fa-envelope"></i></span>
-          <p>{{ account.accountType }}</p>
+          <p>{{ account.accountType | accountType : true}}</p>
         </div>
         <div class="input_div">
           <span>Status <i class="fa-solid fa-phone"></i></span>
-          <p>{{ account.status }}</p>
+          <p>{{ account.status | statusPipe : true}}</p>
         </div>
         <div class="input_div">
           <span>Usuario <i class="fa-solid fa-hashtag"></i></span>
@@ -32,7 +32,7 @@
           <span
             >Creación <i class="fa-solid fa-cake-candles"></i
           ></span>
-          <p>{{ account.createdAt }}</p>
+          <p>{{ account.createdAt | date : 'short' }}</p>
         </div>
       </div>
     </div>

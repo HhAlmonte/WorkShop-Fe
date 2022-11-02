@@ -1,6 +1,7 @@
 <h3 class="text-center">
   <span class="text-muted">Gestor de </span>
   <span style="color:#dc3545;">Tarjetas</span>
+  <button [routerLink]="['/card/create']" class="btn btn-danger">Crear tarjeta</button>
   <hr>
 </h3>
 
@@ -17,7 +18,7 @@
           <th scope="col">Identificador</th>
           <th scope="col">card number</th>
           <th scope="col">card ammount</th>
-          <th scope="col">Status</th>
+          <th scope="col">card type</th>
           <th></th>
         </tr>
       </thead>
@@ -26,9 +27,9 @@
           <th scope="row">{{ card.id }}</th>
           <td>{{ card.cardNumber }}</td>
           <td>{{ card.ammount }}</td>
-          <td>{{ card.status }}</td>
+          <td>{{ card.status | cardType : true }}</td>
           <td>
-            <i class="fa-solid fa-pen-to-square p-2" style="color: green;"> </i>
+            <i routerLink="/card/edit/{{card.id}}" class="fa-solid fa-pen-to-square p-2" style="color: green; cursor:pointer;"> </i>
             <i (click)="deleteCard(card.id)" class="fa-solid fa-trash" style="color: red; cursor:pointer;"></i>
           </td>
           <td>

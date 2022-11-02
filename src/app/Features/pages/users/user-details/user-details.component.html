@@ -10,7 +10,7 @@
       <div class="input_container">
         <div class="input_div">
           <span>Status: <i class="fa-regular fa-hashtag"></i></span>
-          <p>{{ user.status }}</p>
+          <p>{{ user.status | userState : true }}</p>
         </div>
 
         <div class="input_div">
@@ -42,9 +42,40 @@
           <span
             >Fecha de nacimiento <i class="fa-solid fa-cake-candles"></i
           ></span>
-          <p>{{ user.birthDate }}</p>
+          <p>{{ user.birthDate | date : 'short'}}</p>
+        </div>
+      </div>
+
+      <h3 class="text-center">
+        <span class="text-muted">Dirección</span>
+        <hr />
+      </h3>
+
+      <div class="input_container">
+        <div class="input_div">
+          <span>City <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.city }}</p>
         </div>
 
+        <div class="input_div">
+          <span>State <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.state }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>Street <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.street }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>Number <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.number }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>ZIP <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.zip }}</p>
+        </div>
       </div>
     </div>
   </div>

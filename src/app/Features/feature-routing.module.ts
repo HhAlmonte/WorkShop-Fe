@@ -4,7 +4,6 @@ import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path: 'user',
     loadChildren: () =>
@@ -19,7 +18,8 @@ const routes: Routes = [
     path: 'card',
     loadChildren: () =>
       import('./pages/cards/cards.module').then((m) => m.CardsModule),
-  }
+  },
+  {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({

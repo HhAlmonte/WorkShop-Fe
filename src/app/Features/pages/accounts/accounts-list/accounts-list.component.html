@@ -1,6 +1,7 @@
 <h3 class="text-center">
   <span class="text-muted">Gestor de </span>
   <span style="color:#dc3545;">Cuentas</span>
+  <button [routerLink]="['/account/create']" class="btn btn-danger">Crear cuenta</button>
   <hr>
 </h3>
 
@@ -25,11 +26,11 @@
         <tr *ngFor="let account of accounts">
           <th scope="row">{{ account.id }}</th>
           <td>{{ account.accountNumber }}</td>
-          <td>{{ account.accountType }}</td>
-          <td>{{ account.status }}</td>
+          <td>{{ account.accountType | accountType: true}}</td>
+          <td>{{ account.status | statusPipe : true }}</td>
           <td>
-            <i class="fa-solid fa-pen-to-square p-2" style="color: green"> </i>
-            <i (click)="deleteAccounts(account.id)" class="fa-solid fa-trash" style="color: red"></i>
+            <i routerLink="/account/edit/{{account.id}}" class="fa-solid fa-pen-to-square p-2" style="color: green; cursor: pointer;"> </i>
+            <i (click)="deleteAccounts(account.id)" class="fa-solid fa-trash" style="color: red; cursor: pointer;"></i>
           </td>
           <td>
             <a routerLink="/account/details/{{ account.id }}">

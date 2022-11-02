@@ -6,6 +6,7 @@ import { CardsDetailsComponent } from './cards-details/cards-details.component';
 import { CardsFormComponent } from './cards-form/cards-form.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from 'src/app/Core/core.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CardsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule
   ]
 })
 export class CardsModule { }
